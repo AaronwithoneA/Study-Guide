@@ -153,7 +153,11 @@ var multiply = function(x, y) {
 // 13. Write a function that divides two numbers without using the / operator or
 // Math methods.
 var divide = function(x, y) {
-};
+  if (x < y) {
+    return 0;
+  }
+    return divide(x-y, y) + 1;
+  };
 
 // 14. Find the greatest common divisor (gcd) of two positive numbers. The GCD of two
 // integers is the greatest integer that divides both x and y with no remainder.
