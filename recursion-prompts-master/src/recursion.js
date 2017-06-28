@@ -165,14 +165,14 @@ var divide = function(x, y) {
 // http://www.cse.wustl.edu/~kjg/cse131/Notes/Recursion/recursion.html
 // https://www.khanacademy.org/computing/computer-science/cryptography/modarithmetic/a/the-euclidean-algorithm
 var gcd = function(x, y) {
-  let highest = x > y ? x : y;
-  let lowest = x === highest ? y : x;
-
-  if (highest < lowest) {
-    return lowest;
-  }
-
-  return gcd(highest - 1, lowest;)
+  // let highest = x > y ? x : y;
+  // let lowest = x === highest ? y : x;
+  //
+  // if (highest < lowest) {
+  //   return lowest;
+  // }
+  //
+  // return gcd(highest - 1, lowest;)
 };
 
 // 15. Write a function that compares each character of two strings and returns true if
@@ -180,6 +180,17 @@ var gcd = function(x, y) {
 // compareStr('house', 'houses') // false
 // compareStr('tomato', 'tomato') // true
 var compareStr = function(str1, str2) {
+
+  if (str1[0] !== str2[0]) {
+    return false;
+  } else if (((str1.length <=2) && !(str2.length <=2)) ||
+  ((str2.length <=2) && !(str1.length <=2))) {
+    return false;
+  } else if (str1.length <= 2 && str2[1] === str1[1]) {
+    return true
+  } else {
+    return compareStr(str1.slice(1), str2.slice(1))
+  }
 };
 
 // 16. Write a function that accepts a string and creates an array where each letter
