@@ -1,5 +1,13 @@
 
 
+const merge = (left, right) => {
+  let merged = [];
+  while(left.length > 0 && right.length > 0) {
+    left[0] >= right[0] ? merged.push(right[0]) : merged.push(left[0]);
+  }
+  return merged;
+};
+
 const bSearch = (arr, target) => {
   if (arr.length < 1) {
     return -1;
