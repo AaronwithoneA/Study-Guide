@@ -1,4 +1,13 @@
+const mergeSort = (arr) => {
+  if (arr.length < 2) {
+    return arr;
+  }
+  let middle = Math.floor(arr.length/2);
+  let left = mergeSort(arr.slice(0, middle));
+  let right = mergeSort(arr.slice(middle));
 
+  return merge(left, right);
+};
 
 const merge = (left, right) => {
   let merged = [];
