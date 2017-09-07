@@ -55,14 +55,14 @@
 //
 // console.log(recRange(1,8));
 //
-// const recSum = (arr) => {
-//   if (arr.length <= 1) {
-//     return arr[0];
-//   }
-//   return arr[0] + recSum(arr.slice(1));
-// };
-//
-// console.log(recSum([1,2,3,4]));
+const recSum = (arr) => {
+  if (arr.length <= 1) {
+    return arr[0];
+  }
+  return arr[0] + recSum(arr.slice(1));
+};
+
+console.log(recSum([1,2,3,4]));
 //
 const recFib = n => {
   if (n === 2) {
