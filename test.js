@@ -21,22 +21,22 @@
 //
 //
 //
-// const detectConflict = (schedule2) => {
-//   if (schedule2.length <= 1) {
-//     return false;
-//   }
-//
-//   let first = schedule2.shift();
-//   for(let i = 0; i < schedule2.length; i++) {
-//     if(isConflict(first, schedule2[i])) {
-//       return true;
-//     }
-//   }
-//   return detectConflict(schedule2);
-// };
-//
-// console.log(detectConflict(schedule));
-//
+const detectConflict = (schedule2) => {
+  if (schedule2.length <= 1) {
+    return false;
+  }
+
+  let first = schedule2.shift();
+  for(let i = 0; i < schedule2.length; i++) {
+    if(isConflict(first, schedule2[i])) {
+      return true;
+    }
+  }
+  return detectConflict(schedule2);
+};
+
+console.log(detectConflict(schedule));
+
 const recFactorial = (num) => {
   if (num <= 1) {
     return num;
