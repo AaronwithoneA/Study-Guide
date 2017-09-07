@@ -8,16 +8,16 @@
 //   }
 // };
 //
-// const isConflict = (meeting1, meeting2) => {
-//   if ((meeting1[0] < meeting2[1]) && (meeting2[0] < meeting1[1])) {
-//     return true;
-//   }
-//   return false;
-// };
-//
-// let meeting = [1,3];
-// let schedule = [[4,6], [7,9], [10, 12], [1,3], [5,8] ];
-//
+const isConflict = (meeting1, meeting2) => {
+  if ((meeting1[0] < meeting2[1]) && (meeting2[0] < meeting1[1])) {
+    return true;
+  }
+  return false;
+};
+
+let meeting = [1,3];
+let schedule = [[4,6], [7,9], [10, 12], [1,3], [5,8] ];
+
 //
 //
 //
