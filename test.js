@@ -64,24 +64,24 @@
 //
 // console.log(recSum([1,2,3,4]));
 //
-// const recFib = n => {
-//   if (n === 2) {
-//     return [0,1];
-//   }
-//   if (n === 1) {
-//     return [1];
-//   }
-//   if (n === 0) {
-//     return [];
-//   }
-//   let previousFib = recFib(n-1);
-//   let last = previousFib[previousFib.length -1] + previousFib[previousFib.length -2];
-//
-//   return previousFib.concat(last);
-// };
-//
-// console.log(recFib(8));
-//
+const recFib = n => {
+  if (n === 2) {
+    return [0,1];
+  }
+  if (n === 1) {
+    return [1];
+  }
+  if (n === 0) {
+    return [];
+  }
+  let previousFib = recFib(n-1);
+  let last = previousFib[previousFib.length -1] + previousFib[previousFib.length -2];
+
+  return previousFib.concat(last);
+};
+
+console.log(recFib(8));
+
 //
 const recMap = (arr, cb) => {
 
