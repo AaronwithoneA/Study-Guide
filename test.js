@@ -1,12 +1,12 @@
-//  //
-// const isValidMeeting = (meeting, schedule) => {
-//   if (schedule.length <= 1) {
-//     return isConflict(meeting, schedule[0]);
-//   } else {
-//     return isValidMeeting(meeting, schedule.slice(1)) || isConflict(meeting, schedule[0])
-//
-//   }
-// };
+ //
+const isValidMeeting = (meeting, schedule) => {
+  if (schedule.length <= 1) {
+    return isConflict(meeting, schedule[0]);
+  } else {
+    return isValidMeeting(meeting, schedule.slice(1)) || isConflict(meeting, schedule[0])
+
+  }
+};
 //
 const isConflict = (meeting1, meeting2) => {
   if ((meeting1[0] < meeting2[1]) && (meeting2[0] < meeting1[1])) {
