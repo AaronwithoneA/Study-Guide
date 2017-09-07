@@ -93,15 +93,15 @@
 //
 // console.log(recMap([1,2,3,4,5], (num) => num + 1));
 //
-// const recReverse = str => {
-//   if (str.length <= 1) {
-//     return str;
-//   }
-//
-//   return str[str.length - 1] + recReverse(str.slice(0, str.length - 1));
-// };
-//
-// console.log(recReverse('abcde'));
+const recReverse = str => {
+  if (str.length <= 1) {
+    return str;
+  }
+
+  return str[str.length - 1] + recReverse(str.slice(0, str.length - 1));
+};
+
+console.log(recReverse('abcde'));
 
 const recPrintStars = (n) => {
   if (n===1) {
