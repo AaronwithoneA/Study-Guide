@@ -37,14 +37,14 @@
 //
 // console.log(detectConflict(schedule));
 //
-// const recFactorial = (num) => {
-//   if (num <= 1) {
-//     return num;
-//   }
-//   return num * recFactorial(num-1);
-// };
-//
-// console.log(recFactorial(3));
+const recFactorial = (num) => {
+  if (num <= 1) {
+    return num;
+  }
+  return num * recFactorial(num-1);
+};
+
+console.log(recFactorial(3));
 //
 const recRange = (num1, num2) => {
   if (num1 === num2) {
