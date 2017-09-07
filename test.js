@@ -46,14 +46,14 @@
 //
 // console.log(recFactorial(3));
 //
-// const recRange = (num1, num2) => {
-//   if (num1 === num2) {
-//     return num1;
-//   }
-//   return [num1].concat(recRange(num1 + 1, num2));
-// };
-//
-// console.log(recRange(1,8));
+const recRange = (num1, num2) => {
+  if (num1 === num2) {
+    return num1;
+  }
+  return [num1].concat(recRange(num1 + 1, num2));
+};
+
+console.log(recRange(1,8));
 //
 const recSum = (arr) => {
   if (arr.length <= 1) {
