@@ -49,9 +49,9 @@ BinarySearchTree.prototype.remove = function(data) {
         return node.left;
       }
       var temp = this.getMin(node.right);
-       node.data = temp;
-       node.right = removeNode(node.right, temp);
-       return node;
+      node.data = temp;
+      node.right = removeNode(node.right, temp);
+      return node;
    } else if(data < node.data) {
      node.left = removeNode(node.left, data);
      return node;
