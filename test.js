@@ -83,15 +83,15 @@
 // console.log(recFib(8));
 //
 //
-// const recMap = (arr, cb) => {
-//
-//   if (arr.length < 1) {
-//     return [];
-//   }
-//   return [cb(arr[0])].concat(recMap(arr.slice(1), cb));
-// };
-//
-// console.log(recMap([1,2,3,4,5], (num) => num + 1));
+const recMap = (arr, cb) => {
+
+  if (arr.length < 1) {
+    return [];
+  }
+  return [cb(arr[0])].concat(recMap(arr.slice(1), cb));
+};
+
+console.log(recMap([1,2,3,4,5], (num) => num + 1));
 //
 const recReverse = str => {
   if (str.length <= 1) {
