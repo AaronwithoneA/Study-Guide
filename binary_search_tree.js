@@ -87,9 +87,18 @@ BinarySearchTree.prototype.getMax = function(node) {
   return node.data;
 };
 
-BinarySearchTree.prototype.add = function(data) {
+BinarySearchTree.prototype.getHeight = function(node) {
+  if(!node) {
+    return null;
+  }
+  let left = this.getHeight(node.left);
+  let right = this.getHeight(node.right);
 
-}
+  left > right? left + 1: right + 1;
+};
+
+
+
 BinarySearchTree.prototype.add = function(data) {
 
 }
