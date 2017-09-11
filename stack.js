@@ -17,3 +17,7 @@ Stack.prototype.top = function() {
 Stack.prototype.length = function() {
   return this.stack.length;
 };
+
+Stack.prototype.print = function() {
+  console.log(this.stack.join(' '));
+};
