@@ -33,19 +33,18 @@ BinarySearchTree.prototype.add = function(data) {
 };
 
 
+BinarySearchTree.prototype.getMin = function(node) {
+  if(!node) {
+    node = this.root;
+  }
 
+  while(node.left) {
+    node = node.left;
+  }
 
+  return node.data;
+};
 
-
-
-
-
-BinarySearchTree.prototype.add = function(data) {
-
-}
-BinarySearchTree.prototype.add = function(data) {
-
-}
 BinarySearchTree.prototype.add = function(data) {
 
 }
