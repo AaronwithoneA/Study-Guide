@@ -45,6 +45,18 @@ BinarySearchTree.prototype.getMin = function(node) {
   return node.data;
 };
 
+BinarySearchTree.prototype.getMacx = function(node) {
+  if(!node) {
+    node = this.root;
+  }
+
+  while(node.right) {
+    node = node.right;
+  }
+
+  return node.data;
+};
+
 BinarySearchTree.prototype.add = function(data) {
 
 }
