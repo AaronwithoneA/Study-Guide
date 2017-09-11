@@ -13,3 +13,7 @@ Stack.prototype.pop = function() {
 Stack.prototype.top = function() {
   return this.stack[this.stack.length - 1];
 };
+
+Stack.prototype.length = function() {
+  return this.stack.length;
+};
