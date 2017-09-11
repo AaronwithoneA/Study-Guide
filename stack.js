@@ -5,3 +5,7 @@ function Stack() {
 Stack.prototype.push = function(value) {
   this.stack.push(value);
 };
+
+Stack.prototype.pop = function() {
+  this.stack.pop();
+};
