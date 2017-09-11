@@ -134,7 +134,7 @@ list.add(30);
 list.add(40);
 list.add(50);
 
-console.log(list.kthFromEnd(4));
+console.log(list.kthFromEnd(0));
 // list.print();
 // list.remove(5);
 // console.log(list.includes(3));
