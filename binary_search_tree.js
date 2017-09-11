@@ -32,6 +32,36 @@ BinarySearchTree.prototype.add = function(data) {
   }
 };
 
+BinarySearchTree.prototype.remove = function(data) {
+  const removeNode = (node, data2) => {
+    if(!node) {
+      return null;
+    }
+
+    if(data === node.data) {
+      if(!node.left && !node.right) {
+        return null;
+      }
+      if(!node.left) {
+        return node.right;
+      }
+      if(!node.right) {
+        return node.left;
+      }
+      var temp = that.getMin(node.right);
+       node.data = temp;
+       node.right = removeNode(node.right, temp);
+       return node;
+     } else if(data < node.data) {
+       node.left = removeNode(node.left, data);
+       return node;
+     } else {
+       node.right = removeNode(node.right, data);
+       return node;
+     }
+    }
+  };
+};
 
 BinarySearchTree.prototype.getMin = function(node) {
   if(!node) {
@@ -45,7 +75,7 @@ BinarySearchTree.prototype.getMin = function(node) {
   return node.data;
 };
 
-BinarySearchTree.prototype.getMacx = function(node) {
+BinarySearchTree.prototype.getMax = function(node) {
   if(!node) {
     node = this.root;
   }
