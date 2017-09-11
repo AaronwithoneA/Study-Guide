@@ -7,5 +7,9 @@ Stack.prototype.push = function(value) {
 };
 
 Stack.prototype.pop = function() {
-  this.stack.pop();
+  return this.stack.pop();
+};
+
+Stack.prototype.top = function() {
+  return this.stack[this.stack.length - 1];
 };
