@@ -48,19 +48,19 @@ BinarySearchTree.prototype.remove = function(data) {
       if(!node.right) {
         return node.left;
       }
-      var temp = that.getMin(node.right);
+      var temp = this.getMin(node.right);
        node.data = temp;
        node.right = removeNode(node.right, temp);
        return node;
-     } else if(data < node.data) {
-       node.left = removeNode(node.left, data);
-       return node;
-     } else {
-       node.right = removeNode(node.right, data);
-       return node;
-     }
-    }
+   } else if(data < node.data) {
+     node.left = removeNode(node.left, data);
+     return node;
+   } else {
+     node.right = removeNode(node.right, data);
+     return node;
+   }
   };
+  this.root = removeNode(this.root, data);
 };
 
 BinarySearchTree.prototype.getMin = function(node) {
