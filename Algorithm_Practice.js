@@ -6,7 +6,7 @@ const mergeSort = (arr) => {
   let left = mergeSort(arr.slice(0, middle));
   let right = mergeSort(arr.slice(middle));
 
-  return merge(left, right);
+  return merge(left, right);a
 };
 
 const merge = (left, right) => {
@@ -21,15 +21,17 @@ const bSearch = (arr, target) => {
   if (arr.length < 1) {
     return -1;
   }
-  const pivotIdx = arr.length/2;
+  const pivotIdx = Math.floor(arr.length/2);
   const pivot = arr[pivotIdx];
-  if (target < pivot) {
+
+  if (target === pivot) {
+    return pivotIdx;
+  } else if (target < pivot) {
     let left = arr.slice(0, pivotIdx);
-    return bSearch(left);
-  }
-  if (target < pivot) {
+    return bSearch(left, target);
+  } else {
     let right = arr.slice(pivotIdx + 1);
-    let sub = bSearch(right);
+    let sub = bSearch(right, target);
     sub === -1 ? -1 : sub + pivot + 1;
   }
 };
@@ -53,3 +55,23 @@ const quickSort = (arr) => {
 
   return quickSort(left).concat([pivot]).concat(quickSort(right));
 };
+
+
+var longestPalindrome = function(s) {
+
+};
+
+var isPalindrome = function(str) {
+  for(let i = 0; i < Math.floor(str.length/2); i++) {
+    let first = str[i];
+    let second = str[str.length - 1 - i];
+
+    if(first !== second) {
+      return false;
+    }
+  }
+
+  return true;
+};
+
+console.log(isPalindrome('aba'));
