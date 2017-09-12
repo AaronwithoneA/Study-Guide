@@ -58,7 +58,18 @@ const quickSort = (arr) => {
 
 
 var longestPalindrome = function(s) {
+  let longest = '';
 
+  for(let i = 0; i < s.length - 1; i++) {
+    for(let j = i + 1; j < s.length; j++) {
+      let sub = s.slice(i, j + 1);
+      if(isPalindrome(sub) && sub.length >= longest) {
+        longest = sub;
+      }
+    }
+  }
+
+  return longest;
 };
 
 var isPalindrome = function(str) {
