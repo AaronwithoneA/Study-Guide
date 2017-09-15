@@ -46,3 +46,23 @@ LinkedList.prototype.remove = function(data) {
   }
   current = current.next;
 };
+
+LinkedList.prototype.insertAfter =  function(data, beforeNodeData) {
+  var current = this.head;
+
+  while(current) {
+    if(current.data === beforeNodeData) {
+      var newNode = new Node(data);
+
+      if(beforeNodeData === this.tail.data) {
+        this.tail.next = newNode;
+        this.tail = newNode;
+      } else {
+        newNode.next = current.next;
+        current.next = newNode;
+      }
+      this.length++;
+    }
+    current = current.next;
+  }
+};
