@@ -82,3 +82,12 @@ DoublyLinkedList.prototype.traverse = function(cb) {
     current = current.next;
   }
 };
+
+DoublyLinkedList.prototype.traverseBackwards = function(cb) {
+  let current = this.tail;
+
+  while(current) {
+    cb(current);
+    current = current.previous;
+  }
+};
