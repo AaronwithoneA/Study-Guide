@@ -66,3 +66,7 @@ LinkedList.prototype.insertAfter =  function(data, beforeNodeData) {
     current = current.next;
   }
 };
+
+LinkedList.prototype.length = function() {
+  return this.length;
+};
