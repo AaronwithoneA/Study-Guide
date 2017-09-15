@@ -80,3 +80,16 @@ LinkedList.prototype.traverse = function(cb) {
 
   current = current.next;
 };
+
+LinkedList.prototype.includes = function (data) {
+  var current = this.head;
+
+  while(current) {
+    if(current.data === data) {
+      return true;
+    }
+    current = current.next;
+  }
+
+  return false;
+};
