@@ -24,3 +24,28 @@ DoublyLinkedList.prototype.add = function(data) {
 
   this.length++;
 };
+
+DoublyLinkedList.prototype.remove = function(data) {
+  var current = this.head;
+
+  while(current) {
+    if(current.data === data) {
+      if(current == this.head && current === this.tail) {
+        this.head = null;
+        this.tail = null;
+      } else if(current === this.head) {
+        this.head = current.next;
+        this.head.previous = null;
+      } else if(current === this.tail) {
+        this.tail = current.previous;
+        this.tail.next = null;
+      } else {
+        current.next.previous = current.previous;
+        current.previous.next = current.next;
+      }
+      this.length--;
+    }
+
+    current = current.next;
+  }
+}
