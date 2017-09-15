@@ -32,7 +32,7 @@ LinkedList.prototype.remove = function(data) {
   while(current) {
     if(data === current.data) {
       if(current === this.head) {
-        this.head = this.current.next;
+        this.head = current.next;
       }
       if(current === this.tail) {
         this.tail = previous;
@@ -43,8 +43,8 @@ LinkedList.prototype.remove = function(data) {
     }else {
       previous = current;
     }
+    current = current.next;
   }
-  current = current.next;
 };
 
 LinkedList.prototype.insertAfter =  function(data, beforeNodeData) {
@@ -93,3 +93,25 @@ LinkedList.prototype.includes = function (data) {
 
   return false;
 };
+
+LinkedList.prototype.print = function() {
+  var current = this.head;
+  var str = '';
+
+  while(current) {
+    str += current.data + ' ';
+    current = current.next;
+  }
+  console.log(str);
+};
+
+
+var list = new LinkedList();
+
+list.add(5);
+list.add(10);
+list.add(20);
+list.print();
+list.remove(5);
+// console.log(list.includes(3));
+list.print();
