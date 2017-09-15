@@ -48,4 +48,28 @@ DoublyLinkedList.prototype.remove = function(data) {
 
     current = current.next;
   }
-}
+};
+
+DoublyLinkedList.prototype.insertAfter = function(data, beforeNodeData) {
+  let current = this.head;
+
+  while(current) {
+    if(current.data === beforeNodeData) {
+      let node = new Node(data);
+
+      if(current === this.tail) {
+        node.previous = this.tail;
+        this.tail.next = node;
+        this.tail = node;
+      } else {
+        current.next.previous = node;
+        node.next = current.next;
+        node.previous = current;
+        current.next = node;
+      }
+      this.length++;
+    }
+
+    current = current.next;
+  }
+};
