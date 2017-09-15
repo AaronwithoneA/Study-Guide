@@ -91,3 +91,25 @@ DoublyLinkedList.prototype.traverseBackwards = function(cb) {
     current = current.previous;
   }
 };
+
+DoublyLinkedList.prototype.print =  function() {
+  var current = this.head;
+  var str = '';
+
+  while(current) {
+    str += current.data + ' ';
+    current = current.next;
+  }
+  console.log(str);
+};
+
+let list = new DoublyLinkedList();
+
+list.add(5);
+list.add('hello');
+list.add(15);
+list.print();
+list.remove(5);
+list.print();
+list.insertAfter(100, 'hello');
+list.print();
