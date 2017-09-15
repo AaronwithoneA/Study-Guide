@@ -70,3 +70,13 @@ LinkedList.prototype.insertAfter =  function(data, beforeNodeData) {
 LinkedList.prototype.length = function() {
   return this.length;
 };
+
+LinkedList.prototype.traverse = function(cb) {
+  var current = this.head;
+
+  while(current) {
+    cb(current);
+  }
+
+  current = current.next;
+};
