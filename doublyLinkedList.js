@@ -73,3 +73,12 @@ DoublyLinkedList.prototype.insertAfter = function(data, beforeNodeData) {
     current = current.next;
   }
 };
+
+DoublyLinkedList.prototype.traverse = function(cb) {
+  let current = this.head;
+
+  while(current) {
+    cb(current);
+    current = current.next;
+  }
+};
