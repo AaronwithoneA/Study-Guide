@@ -105,13 +105,37 @@ LinkedList.prototype.print = function() {
   console.log(str);
 };
 
+LinkedList.prototype.kthFromEnd = function(k) {
+  var i = 1;
+  var k;
+  var kthNode;
+
+  var current = this.head;
+
+  while(current) {
+    if(i === k) {
+      kthNode = this.head;
+    } else if (i - k > 0) {
+      kthNode = kthNode.next;
+    }
+    i++;
+    current = current.next;
+  }
+
+  return kthNode;
+};
 
 var list = new LinkedList();
 
 list.add(5);
 list.add(10);
 list.add(20);
-list.print();
-list.remove(5);
+list.add(30);
+list.add(40);
+list.add(50);
+
+console.log(list.kthFromEnd(4));
+// list.print();
+// list.remove(5);
 // console.log(list.includes(3));
-list.print();
+// list.print();
