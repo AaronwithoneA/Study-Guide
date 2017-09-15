@@ -24,3 +24,25 @@ LinkedList.prototype.add = function(data) {
 
   this.length++;
 };
+
+LinkedList.prototype.remove = function(data) {
+  var current = this.head;
+  var previous = this.head;
+
+  while(current) {
+    if(data === current.data) {
+      if(current === this.head) {
+        this.head = this.current.next;
+      }
+      if(current === this.tail) {
+        this.tail = previous;
+      }
+
+      previous.next = current.next;
+      this.length--;
+    }else {
+      previous = current;
+    }
+  }
+  current = current.next;
+};
