@@ -1,5 +1,5 @@
-function Graph () {
-  this.vertices = [];
+function Graph (vertices) {
+  this.vertices = vertices ? vertices.slice() : [];
   this.edges = {};
 }
 
@@ -48,19 +48,20 @@ Graph.prototype.traverseDFS_ = function(vertex, visited, fn) {
 };
 
 Graph.prototype.topologicalSort = function() {
+  let dupGraph = new Graph(this.vertices);
   let sorted = [];
   let queue = [];
-  let edges = this.edges;
+  let edges = dupGraph.edges;
 
-  for(let i = 0; i < this.vertices.length; i++) {
-    let vertex = this.vertices[i];
+  for(let i = 0; i < dupGraph.vertices.length; i++) {
+    let vertex = dupGraph.vertices[i];
     if(vertex.inEdges.length === 0) {
       queue.push(vertex);
     }
   }
 
   while(queue.length) {
-    let current = queue.pop();
+    let current = queue.shift();
     sorted.push(current);
     let destinations = current.outEdges;
 
@@ -74,9 +75,18 @@ Graph.prototype.topologicalSort = function() {
     }
 
     current.outEdges = [];
-    let vertexIndex = this.vertices.indexOf(current);
-    this.vertices.splice(vertexIndex, 1);
+    let vertexIndex = dupGraph.vertices.indexOf(current);
+    dupGraph.vertices.splice(vertexIndex, 1);
   }
 
   return sorted;
 };
+
+let graph = new Graph();
+
+graph.addVertex(10);
+console.log(graph.vertices);
+
+let graph2 = new Graph(graph.vertices);
+graph2.addVertex(5);
+console.log(graph.vertices);
