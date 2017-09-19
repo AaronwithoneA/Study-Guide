@@ -20,3 +20,12 @@ Graph.prototype.addEdge = function (vertex1, vertex2) {
     this.edge(vertex2).push(vertex1);
   }
 };
+
+Graph.prototype.traverseDFS = function(vertex, fn) {
+  if(!vertex) {
+    return 'Vertex does not exist';
+  }
+
+  let visited = {};
+  this.traverseDFS_(vertex, visited, fn);
+};
