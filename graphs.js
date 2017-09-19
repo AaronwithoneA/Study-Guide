@@ -29,3 +29,20 @@ Graph.prototype.traverseDFS = function(vertex, fn) {
   let visited = {};
   this.traverseDFS_(vertex, visited, fn);
 };
+
+Graph.prototype.traverseDFS_ = function(vertex, visited, fn) {
+  if(!vertex) {
+    return;
+  }
+
+  fn(vertex);
+  visited[vertex] =  true;
+
+  let connections = this.edges[vertex];
+  for(let i = 0; i < connections.length; i++) {
+    let connectedVertex = connections[i];
+    if(!visited[connectedVertex]) {
+      this.traverseDFS_(connectedVertex, visited, fn);
+    }
+  }
+};
