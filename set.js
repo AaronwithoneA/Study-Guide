@@ -9,3 +9,11 @@ Set.prototype.add = function(value) {
     this.numberOfValues++;
   }
 };
+
+Set.prototype.remove = function(value) {
+  var index = this.values.indexOf(value);
+  if(~index) {
+    this.values.splice(index, 1);
+    this.numberOfValues--;
+  }
+};
