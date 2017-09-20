@@ -131,3 +131,12 @@ console.log(isPrime(11));
 console.log(isPrime(4));
 console.log(isPrime(22));
 console.log(isPrime(2));
+
+function func1() {
+  let num = 8;
+  for(var i = 0; i < 10; i++) {
+    let num = 7;
+  }
+
+  console.log(num);
+}

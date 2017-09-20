@@ -6,7 +6,7 @@ const mergeSort = (arr) => {
   let left = mergeSort(arr.slice(0, middle));
   let right = mergeSort(arr.slice(middle));
 
-  return merge(left, right);a
+  return merge(left, right);
 };
 
 const merge = (left, right) => {
