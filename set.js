@@ -17,3 +17,7 @@ Set.prototype.remove = function(value) {
     this.numberOfValues--;
   }
 };
+
+Set.prototype.contains = function(value) {
+  return this.values.indexOf(value) !== -1;
+};
