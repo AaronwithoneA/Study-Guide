@@ -27,3 +27,8 @@ Set.prototype.union = function(set) {
   set.values.forEach(function(value) {
     newSet.add(value);
   });
+  this.values.forEach(function(value) {
+   newSet.add(value);
+ });
+ return newSet;
+};
