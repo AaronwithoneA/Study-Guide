@@ -58,3 +58,7 @@ Set.prototype.isSubset = function(set) {
     return this.contains(value);
   }, this);
 };
+
+Set.prototype.length = function() {
+  return this.numberOfValues;
+};
