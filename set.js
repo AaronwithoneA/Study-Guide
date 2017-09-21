@@ -62,3 +62,7 @@ Set.prototype.isSubset = function(set) {
 Set.prototype.length = function() {
   return this.numberOfValues;
 };
+
+Set.prototype.print = function() {
+  console.log(this.values.join(' '));
+};
