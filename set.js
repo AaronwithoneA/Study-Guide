@@ -52,3 +52,9 @@ Set.prototype.difference = function(set) {
   });
   return newSet;
 };
+
+Set.prototype.isSubset = function(set) {
+  return set.values.every(function(value) {
+    return this.contains(value);
+  }, this);
+};
