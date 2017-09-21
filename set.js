@@ -32,3 +32,13 @@ Set.prototype.union = function(set) {
  });
  return newSet;
 };
+
+Set.prototype.intersect = function(set) {
+  var newSet = new Set();
+  this.values.forEach(function(value) {
+    if(set.contains(value)) {
+      newSet.add(value);
+    }
+  });
+  return newSet;
+};
