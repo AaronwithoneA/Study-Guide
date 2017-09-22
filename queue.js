@@ -10,3 +10,7 @@ Queue.prototype.enqueue = function(value) {
 Queue.prototype.dequeue = function() {
   return this.queue.shift();
 };
+
+Queue.prototype.peek = function() {
+  return this.queue[0];
+};
