@@ -18,3 +18,7 @@ Queue.prototype.peek = function() {
 Queue.prototype.length = function() {
   return this.queue.length;
 };
+
+Queue.prototype.print = function() {
+  console.log(this.queue.join(' '));
+};
