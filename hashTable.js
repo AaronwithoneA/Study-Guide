@@ -14,3 +14,11 @@ HashTable.prototype.add = function(key, value) {
   }
   this.values[hash][key] = value;
 };
+
+HashTable.prototype.remove = function(key) {
+  var hash = this.calculateHash(key);
+  if(this.values.hasOwnProperty(hash) && this.values[hash].hasOwnProperty(key)) {
+    delete this.values[hash][key];
+    this.numberOfValues--;
+  }
+};
