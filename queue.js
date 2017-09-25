@@ -14,3 +14,7 @@ Queue.prototype.dequeue = function() {
 Queue.prototype.peek = function() {
   return this.queue[0];
 };
+
+Queue.prototype.length = function() {
+  return this.queue.length;
+};
