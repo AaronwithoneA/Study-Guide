@@ -35,3 +35,7 @@ HashTable.prototype.search = function(key) {
     return null;
   }
 };
+
+HashTable.prototype.length = function() {
+  return this.numberOfValues;
+};
