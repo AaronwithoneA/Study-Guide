@@ -26,3 +26,12 @@ HashTable.prototype.remove = function(key) {
 HashTable.prototype.calculateHash = function(key) {
   return key.toString().length % this.size;
 };
+
+HashTable.prototype.search = function(key) {
+  var hash = this.calculateHash(key);
+  if(this.values.hasOwnProperty(hash) && this.values[hash].hasOwnProperty(key)) {
+    return this.values[hash][key];
+  } else {
+    return null;
+  }
+};
