@@ -41,5 +41,5 @@ function moreDotLessDash(str) {
     }
   }
 
-  return dotCount > dashCount;
+  return (dotCount > dashCount);
 }
