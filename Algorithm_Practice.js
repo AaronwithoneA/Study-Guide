@@ -1,93 +1,45 @@
-const mergeSort = (arr) => {
-  if (arr.length < 2) {
-    return arr;
-  }
-  let middle = Math.floor(arr.length/2);
-  let left = mergeSort(arr.slice(0, middle));
-  let right = mergeSort(arr.slice(middle));
 
-  return merge(left, right);
-};
-
-const merge = (left, right) => {
-  let merged = [];
-  while(left.length > 0 && right.length > 0) {
-    left[0] >= right[0] ? merged.push(right[0]) : merged.push(left[0]);
-  }
-  return merged;
-};
 
 const bSearch = (arr, target) => {
   if (arr.length < 1) {
     return -1;
   }
-  const pivotIdx = Math.floor(arr.length/2);
+  const pivotIdx = arr.length/2;
   const pivot = arr[pivotIdx];
-
-  if (target === pivot) {
-    return pivotIdx;
-  } else if (target < pivot) {
+  if (target < pivot) {
     let left = arr.slice(0, pivotIdx);
-    return bSearch(left, target);
-  } else {
+    return bSearch(left);
+  }
+  if (target < pivot) {
     let right = arr.slice(pivotIdx + 1);
-    let sub = bSearch(right, target);
+    let sub = bSearch(right);
     sub === -1 ? -1 : sub + pivot + 1;
   }
 };
 
-const quickSort = (arr) => {
-  if(arr.length < 2) {
-    return arr;
-  }
+Write a function `moreDotLessDash(str)` that takes in a string and
+returns the true if the string contains more dots ('.') than dashes
+('-'), false otherwise.
+Examples:
+moreDotLessDash('2-D arrays are fun. I think.'); // => true
+moreDotLessDash('.-.-.'); // => true
+moreDotLessDash('.-'); // => false
+moreDotLessDash('..--'); // => false
+***********************************************************************/
 
-  let pivot = arr[0];
-  let left = [];
-  let right = [];
+function moreDotLessDash(str) {
+  var dotCount = 0;
+  var dashCount = 0;
 
-  for(let i = 1; i < arr.length; i++) {
-    if(arr[i] <= pivot) {
-      left.push(arr[i]);
-    } else {
-      right.push(arr[i]);
+  for (var i = 0; i < str.length; i += 1) {
+    var char = str[i];
+
+    if (char === '.') {
+      dotCount += 1;
+    } else if (char === '-') {
+      dashCount += 1;
     }
   }
 
-  return quickSort(left).concat([pivot]).concat(quickSort(right));
-};
-
-
-var longestPalindrome = function(s) {
-  if(s.length <= 1) {
-    return s;
-  }
-
-  let longest = '';
-
-  for(let i = 0; i < s.length; i++) {
-    for(let j = i + 1; j < s.length; j++) {
-      let sub = s.slice(i, j + 1);
-      console.log(sub);
-      if(isPalindrome(sub) && sub.length >= longest) {
-        longest = sub;
-      }
-    }
-  }
-
-  return longest;
-};
-
-var isPalindrome = function(str) {
-  for(let i = 0; i < Math.floor(str.length/2); i++) {
-    let first = str[i];
-    let second = str[str.length - 1 - i];
-
-    if(first !== second) {
-      return false;
-    }
-  }
-
-  return true;
-};
-
-console.log(longestPalindrome('a'));
+  return (dotCount > dashCount);
+}
