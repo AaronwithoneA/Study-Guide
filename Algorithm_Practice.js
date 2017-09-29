@@ -88,3 +88,17 @@ function isPrime(num) {
 
   return true;
 }
+
+function smallestPrime(array) {
+  var smallest = null;
+
+  for (var i = 0; i < array.length; i += 1) {
+    var num = array[i];
+
+    if (isPrime(num) && (num < smallest || smallest === null)) {
+      smallest = num;
+    }
+  }
+
+  return smallest;
+}
