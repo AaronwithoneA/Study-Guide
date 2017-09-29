@@ -65,7 +65,7 @@ function toFeet(distances) {
 
     if (parts[1] === 'yards') {
       var newDis = (num * 3) + ' feet';
-      
+
       distancesInFeet.push(newDis);
     } else {
       distancesInFeet.push(dis);
@@ -73,4 +73,18 @@ function toFeet(distances) {
   }
 
   return distancesInFeet;
+}
+
+function isPrime(num) {
+  if (num < 2) {
+    return false;
+  }
+
+  for (var i = 2; i  <= Math.sqrt(num); i += 1) {
+    if (num % i === 0){
+      return false
+    }
+  }
+
+  return true;
 }
