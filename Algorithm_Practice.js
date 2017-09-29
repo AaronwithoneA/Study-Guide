@@ -102,3 +102,16 @@ function smallestPrime(array) {
 
   return smallest;
 }
+
+function safeSpeedChange(speeds) {
+
+  for (var i = 0; i < speeds.length - 1; i += 1) {
+    var diff = speeds[i + 1] - speeds[i];
+
+    if (Math.abs(diff) > 5) {
+      return false;
+    }
+  }
+
+  return true;
+}
