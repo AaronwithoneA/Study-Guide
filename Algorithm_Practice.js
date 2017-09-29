@@ -53,3 +53,24 @@ function isSorted(array) {
 
   return true;
 }
+
+function toFeet(distances) {
+  var distancesInFeet = [];
+
+  for (var i = 0; i < distances.length; i += 1) {
+    var dis = distances[i];
+    var parts = dis.split(' ');
+    var num = parts[0];
+    var unit = parts[1];
+
+    if (parts[1] === 'yards') {
+      var newDis = (num * 3) + ' feet';
+
+      distancesInFeet.push(newDis);
+    } else {
+      distancesInFeet.push(dis);
+    }
+  }
+
+  return distancesInFeet;
+}
