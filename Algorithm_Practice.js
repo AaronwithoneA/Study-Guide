@@ -65,6 +65,7 @@ function toFeet(distances) {
 
     if (parts[1] === 'yards') {
       var newDis = (num * 3) + ' feet';
+      
       distancesInFeet.push(newDis);
     } else {
       distancesInFeet.push(dis);
