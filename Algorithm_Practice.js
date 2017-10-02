@@ -143,3 +143,18 @@ function indexOfLastVowel(word) {
     }
   }
 }
+
+function revHipWord(word) {
+  var vowels = 'aeiou';
+  var lastVowelIdx = indexOfLastVowel(word);
+  var newWord = '';
+
+  for (var i = 0; i < word.length; i++) {
+    var char = word[i];
+    if (vowels.indexOf(char) === -1 || i === lastVowelIdx) {
+      newWord += char;
+    }
+  }
+
+  return newWord;
+}
