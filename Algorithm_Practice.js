@@ -158,3 +158,16 @@ function revHipWord(word) {
 
   return newWord;
 }
+
+function reverseHipsterfy(sentence) {
+  var words = sentence.split(' ');
+  var newWords = [];
+
+  for (var i = 0; i < words.length; i++) {
+    var word = words[i];
+    var newWord = revHipWord(word);
+    newWords.push(newWord);
+  }
+
+  return newWords.join(' ');
+}
