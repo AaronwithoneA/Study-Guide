@@ -116,6 +116,7 @@ function safeSpeedChange(speeds) {
 }
 
 function isUniqueAnagram(word1, word2) {
+
   if (word1.length !== word2.length) {
     return false;
   }
@@ -129,4 +130,16 @@ function isUniqueAnagram(word1, word2) {
   }
 
   return true;
+}
+
+
+function indexOfLastVowel(word) {
+  var vowels = 'aeiou';
+
+  for (var i = word.length - 1; i >= 0; i--) {
+    var char = word[i];
+    if (vowels.indexOf(char) > -1) {
+      return i;
+    }
+  }
 }
