@@ -171,3 +171,21 @@ function reverseHipsterfy(sentence) {
 
   return newWords.join(' ');
 }
+
+function handScore(string) {
+  var value = {
+    'J': 1,
+    'Q': 2,
+    'K': 3
+  }
+
+  var score = 0;
+
+  for (var i = 0; i < string.length; i += 1) {
+    var card = string[i];
+
+    score += value[card];
+  }
+
+  return score;
+}
