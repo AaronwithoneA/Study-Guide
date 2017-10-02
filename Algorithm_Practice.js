@@ -189,3 +189,16 @@ function handScore(string) {
 
   return score;
 }
+
+function winningHand(hand1, hand2) {
+  var score1 = handScore(hand1);
+  var score2 = handScore(hand2);
+
+  if (score1 > score2) {
+    return hand1;
+  } else if (score2 > score1) {
+    return hand2;
+  } else {
+    return 'DRAW';
+  }
+}
