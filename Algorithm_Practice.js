@@ -202,3 +202,18 @@ function winningHand(hand1, hand2) {
     return 'DRAW';
   }
 }
+
+function shiftChars(word, num) {
+  var alphabet = 'abcdefghijklmnopqrstuvwxyz'.split('');
+  var shifted = '';
+
+  for (var i = 0; i < word.length; i += 1) {
+    var char = word[i];
+    var index = alphabet.indexOf(char);
+    var newIndex = (index + num) % 26;
+
+    shifted += alphabet[newIndex];
+  }
+
+  return shifted;
+}
