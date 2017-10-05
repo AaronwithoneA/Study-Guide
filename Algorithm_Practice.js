@@ -217,3 +217,18 @@ function shiftChars(word, num) {
 
   return shifted;
 }
+
+function uncompressString(str) {
+  var newStr = '';
+
+  for (var i = 0; i < str.length - 1; i += 2) {
+    var char = str[i];
+    var num = Number(str[i + 1]);
+
+    for (var j = 0; j < num; j += 1) {
+      newStr += char;
+    }
+  }
+
+  return newStr;
+}
